@@ -1,0 +1,85 @@
+function calculadora() {
+    //"MENU" CREATION
+    const operacao = Number(prompt('Escolha uma operação:\n 1 - Soma(+)\n 2 - Subtração(-)\n 3 - multiplicação(*)\n 4 - divisão real(/)\n 5 - Divisão inteira(%)\n 6 - potenciação(**)'));
+    //DATA INPUT
+    if(!operacao || operacao >= 7){
+        alert('Opção inválida. Tente Novamente.');
+        calculadora();
+
+    }else{ 
+
+
+        if(!n1 || !n2){
+            alert('Erro. Número fora dos parâmetros');
+            calculadora();
+        }else{
+            let n1 = Number(prompt('Insira o primeiro valor:'));
+            let n2 = Number(prompt('Insira o segundo valor:'));
+            let resultado;
+      //DATA EXECUTION
+        function soma(){
+          resultado = n1 + n2;
+          alert(`${n1} + ${n2} = ${resultado}`);
+          novaOperacao();
+        }
+        function subtracao(){
+          resultado = n1 - n2;
+          alert(`${n1} - ${n2} = ${resultado}`);
+          novaOperacao();
+        }
+        function multiplicacao(){
+          resultado = n1 * n2;
+          alert(`${n1} * ${n2} = ${resultado}`);
+          novaOperacao();
+        }
+        function divisaoreal(){
+          resultado = n1 / n2;
+          alert(`${n1} / ${n2} = ${resultado}`);
+          novaOperacao();
+        }
+        function divisaointeira(){
+          resultado = n1 % n2;
+          alert(`${n1} % ${n2} = ${resultado}`);
+          novaOperacao();
+        }
+        function potenciacao(){
+          resultado = n1 ** n2;
+          alert(`${n1} ** ${n2} = ${resultado}`);
+          novaOperacao();
+        }
+   
+  
+      function novaOperacao() {
+          let opcao = prompt('Deseja fazer uma nova operação?\n 1 - Sim\n 2 - Não');
+  
+          if(opcao == 1){
+              calculadora();
+          }else if(opcao == 2){
+              alert(`Até mais.`);
+          }else{
+              alert(`Digite uma opção válida!`);
+              novaOperacao();
+          }
+  
+  
+      }
+  }
+  if(operacao == 1){
+    soma();
+    }else if(operacao == 2){
+    subtracao();
+    }else if(operacao == 3){
+    multiplicacao();
+    }else if(operacao == 4){
+    divisaoreal();
+    }else if(operacao == 5){
+    divisaointeira();
+    }else if(operacao == 6){
+    potenciacao();
+    }
+  }
+  
+
+//DATA OUTPUT
+calculadora();
+}
